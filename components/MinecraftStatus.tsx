@@ -94,7 +94,7 @@ export default function MinecraftStatus({ serverAddress }: MinecraftStatusProps)
                     <span className="font-semibold text-red-400">Offline</span>
                   </>
                 );
-              } else if (status.version?.includes('Sleeping') || status.players.online === 0) {
+              } else if (status.version?.includes('Sleeping')) {
                 return (
                   <>
                     <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
@@ -114,7 +114,7 @@ export default function MinecraftStatus({ serverAddress }: MinecraftStatusProps)
         </div>
 
         {/* Sleeping Status Explanation */}
-        {status?.online && (status.version?.includes('Sleeping') || status.players.online === 0) && (
+        {status?.online && status.version?.includes('Sleeping') && (
           <div className="bg-yellow-900/30 border border-yellow-600/50 rounded-lg p-3">
             <p className="text-yellow-200 text-sm">
               🛌 Server is sleeping to save resources. It will automatically wake up when a player joins!
