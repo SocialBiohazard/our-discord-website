@@ -1,0 +1,242 @@
+# Holy Trinity Portal - Project Documentation
+
+## Feature Log
+*Features will be logged here as they are fully implemented.*
+
+## Change Log
+*Changes will be logged here after every prompt.*
+
+### Initial Setup - Session 1
+- Created readmine.md file for project documentation
+- Read instructions.md and design_scheme.md to understand project requirements
+- Project is a Next.js + TypeScript + Tailwind CSS web portal with three main pages:
+  - / (Holy Trinity Discord page) 
+  - /minecraft (Minecraft server status and info)
+  - /hall-of-fame (Medal.tv clip integration)
+- Initialized Next.js project with TypeScript and Tailwind CSS
+- Created project structure with pages/, components/, utils/, styles/ directories
+- Implemented core styling with neon/cyberpunk theme from design_scheme.md
+- Created reusable components: NeonButton, NeonCard
+- Implemented main index page (/) with Discord integration
+- Created Discord components: DiscordWidget, DiscordEvents, AnnouncementsMirror
+- Created Discord API routes: /api/discord/events, /api/discord/announcements
+- Set up .env.example file with all required environment variables
+- Started development server successfully
+- Fixed Tailwind CSS PostCSS configuration issue by completely resetting with stable v3.4.17
+- Removed and reinstalled Tailwind CSS with proper CLI initialization (npx tailwindcss init -p)
+- Fixed Next.js configuration warning by removing deprecated experimental.appDir option
+- Enhanced global CSS with proper neon/cyberpunk styling (dark backgrounds, glowing effects, custom scrollbars)
+- Updated main page with dramatic neon styling: glowing titles, animated backgrounds, grid overlay
+- Enhanced all components with better neon borders, shadows, and hover effects
+- Applied full design scheme from design_scheme.md with proper color palette and animations
+- Development server now running successfully on http://localhost:3000 with HTTP 200 status
+- ✅ ALL TAILWIND CSS ISSUES RESOLVED - Full neon design now working properly
+- MAJOR DESIGN OVERHAUL: Switched to sleek, minimalistic design per user request
+- Removed Quick Access section entirely 
+- Removed DISCORD • MINECRAFT • HALL OF FAME subtitle section
+- Simplified header with clean HOLY TRINITY title (no glowing effects)
+- Replaced NeonCard components with simple gray cards with subtle borders
+- Updated NeonButton to minimalistic style with subtle hover effects
+- Removed animated background grid and neon glowing effects
+- Applied clean, dark theme with gray accents instead of neon colors
+- Created global Layout component with shared title and navigation
+- Moved "Ducks In A Barrel & Co." title to be global across all pages with glowing animation
+- Created empty placeholder pages for /minecraft and /hall-of-fame with global navigation
+- Restructured Discord page layout: Discord widget moved to vertical sidebar on right
+- Events and Announcements moved to left side as wide horizontal components
+- Changed grid layout from 3-column to 4-column (3/4 left content, 1/4 right sidebar)
+- Added sticky positioning to Discord widget sidebar for better UX
+- ✅ DISCORD INTEGRATION COMPLETE: Set up Discord bot with proper permissions and environment variables
+- Discord widget now displays live server info with server ID 1390814481872851015
+- Discord API endpoints (/api/discord/events and /api/discord/announcements) are working correctly
+- Bot token and channel ID configured in .env.local file
+- Fixed React warning for allowTransparency prop in iframe
+- All Discord 500 errors resolved - integration is fully functional
+- Fixed deprecated frameBorder attribute by replacing with style={{ border: 0 }}
+- Centered announcements and events widgets in the middle of the page
+- Fixed layout to properly center announcements/events at original size
+- Changed from grid to flexbox layout with justify-center for true centering
+- Announcements and events maintain max-w-4xl (original size)
+- Discord widget naturally flows to right side with fixed w-80 width
+- Added responsive design: flex-col on mobile, flex-row on desktop
+- Added comprehensive welcome section at top of Discord page
+- Created beautiful hero section with community description and features grid
+- Features grid showcases 5 key community highlights with color-coded accent colors
+- Welcome section pushes all other widgets (announcements, events, Discord) downward
+- Responsive grid layout: 1 column on mobile, 2 on tablet, 3 on desktop
+- Added new "Quack-Tastic Memes" feature to Why Join Our Pond section
+- Implemented shining text animation for all feature block titles with underlines
+- Added neon border glow animation effects for all feature cards
+- Created custom CSS animations: shine (2s text glow) and cardGlow (3s border pulse)
+- Enhanced feature cards with color-coded borders matching their accent colors
+- Added hover effects for feature cards with transform and enhanced glow
+- Replaced individual color borders with stunning rainbow neon border effects
+- Implemented rainbow gradient animation with 7-color spectrum (ROYGBIV) ONLY on border lines
+- Used CSS border-image with linear gradients for precise border-only rainbow effect
+- Created rotating color sequence animation with 7 keyframes for smooth color transitions
+- Enhanced hover effects with card lift and subtle glow while maintaining border-only rainbow
+- Changed rainbow borders to purple neon theme for more cohesive design
+- Implemented purple gradient spectrum from deep violet to light lavender
+- Reduced animation duration to 3s with smooth ease-in-out timing for elegant effect
+- Added slight border curvature by changing from rounded-lg to rounded-xl for softer edges
+- Reduced text glow intensity for more subtle shining effect (4px-8px instead of 10px-30px)
+- Extended shining animation duration to 3s for gentler pulsing effect
+- Removed welcome section container background to blend seamlessly with black page background
+- Welcome section content now appears directly on the page without visual container boundaries
+- Added purple neon border animation to Discord announcements and events containers
+- Applied shining text animation with underline to "Welcome to Ducks in a Barrel" header
+- Updated Discord widget component to use purple neon border glow effect
+- Standardized all main containers with rounded-xl corners and rainbow-border-glow class
+- REMOVED ALL ANIMATED BORDERS for sleek minimalistic design
+- Replaced rainbow-border-glow with simple static gray borders (border-gray-700)
+- Removed shining text animations from all titles and headers
+- Removed underlines from feature block titles for cleaner appearance
+- Maintained rounded-xl corners and color-coded accent text for subtle visual hierarchy
+- RESTORED shining text animations while keeping borders removed
+- Added shining-text animation back to welcome header with underline
+- Added shining-text animation back to all feature block titles with underlines
+- Applied shining-text animation to navigation buttons (DISCORD, MINECRAFT, HALL OF FAME)
+- Removed all borders from containers while maintaining rounded-xl corners and background colors
+- REMOVED "Ducks In A Barrel & Co." title entirely from global header
+- Moved navigation buttons to top of page with minimal padding (pt-8)
+- Clean, minimalistic top navigation without main site title
+- UNIFIED COLOR SCHEME: Changed all colored titles to custom purple (#9966CC)
+- Applied #9966CC to all feature block titles and navigation buttons
+- Maintained white color for main headers (Welcome section)
+- Consistent purple branding across all colored text elements
+- SWITCHED TO TAILWIND PURPLE: Changed from custom #9966CC to text-purple-400
+- Applied text-purple-400 to all feature block titles and navigation buttons
+- Using Tailwind's built-in purple-400 color for better consistency and maintainability
+- ALIGNED DISCORD WIDGET WITH FEATURE GRID: Implemented CSS Grid layout
+- Changed from flexbox to 4-column grid (3 cols for content, 1 col for Discord widget)
+- Discord widget now aligns perfectly with the right edge of feature cards below
+- Maintained responsive behavior with grid-cols-1 on mobile, grid-cols-4 on desktop
+- IMPLEMENTED DUCK PARTICLES BACKGROUND: Added floating duck SVG particles using tsparticles
+- Created DuckParticles component with custom duck SVG shapes instead of dots
+- Optimized duck SVG with purple color theme (#9966CC) and proper opacity
+- Configured particles with gentle floating motion, size animation, and rotation
+- Set particles behind content with proper z-index layering
+- Interactive particles respond to mouse hover and clicks
+- Duck particles appear on all pages through Layout component
+- RESOLVED BUILD ERRORS: Fixed Next.js compilation issues preventing deployment
+- Removed conflicting tsparticles v2/v3 dependencies causing TypeScript errors
+- Fixed Layout component prop requirements for minecraft and hall-of-fame pages
+- Temporarily removed DuckParticles component to resolve tsparticles API conflicts
+- Fixed React ESLint warnings for unescaped apostrophes in content text
+- Successfully completed production build with exit code 0
+- All pages now compile and generate static content properly
+- REIMPLEMENTED DUCK PARTICLES: Created custom particles.js solution using pure JavaScript and CSS
+- Built lightweight particle system without external dependencies (no tsparticles conflicts)
+- 24 floating duck SVG particles with smooth animation and physics (doubled quantity for more vibrant effect)
+- Custom mouse interaction: particles repel from cursor within 100px radius
+- Particle wrapping: ducks smoothly transition across screen boundaries
+- Purple color filter applied to duck SVGs matching site theme
+- Rotation animation and gentle floating motion with velocity damping
+- Background positioning with proper z-index layering behind content
+- Responsive design that adapts to window resizing
+- Performance optimized with requestAnimationFrame for smooth 60fps animation
+- ADDED PARTNERS SECTION: Added "Meet our partners!" header below main content
+- Used exact same styling as "Check us out on Discord!" header (text-3xl font-orbitron font-bold text-white)
+- Applied shining-text animation and underline decoration matching main section headers
+- Positioned with proper spacing and centered alignment for future partner content
+- INCREASED DUCK PARTICLES: Doubled particle count from 12 to 24 for more vibrant background effect
+- ADDED SOCIAL'S NIGHTCLUB INTEGRATION: Complete second Discord server integration
+- Created dedicated API routes for Social's Nightclub server (694912331267964961)
+- Built SocialsAnnouncementsMirror component for Social's announcements channel (1158094335238209586)
+- Built SocialsDiscordEvents component for Social's events display
+- Added Social's Nightclub description section with nightclub/party theme
+- Implemented identical Discord widget layout and sizing for both servers
+- Fixed Discord widget width consistency between Ducks and Social's sections (lg:w-80)
+- Updated main content container from max-w-6xl to max-w-7xl for better layout
+- Combined "Meet our partners!" with Social's Nightclub into unified section header
+- Added proper spacing and layout structure for Social's Discord integration
+- ATTEMPTED PARTICLE TRANSITION: Explored duck-to-champagne glass particle transition on scroll
+- Added champagne glass SVG to public folder for particle effects
+- Researched scroll-based particle type transitions but reverted due to complexity
+- Maintained stable duck particle system for consistent user experience
+- MINECRAFT PAGE COMPLETE: Full implementation of Minecraft server integration page
+- Added "Join Us On Minecraft!" header with exact styling matching Discord welcome section
+- Comprehensive Better MC BMC5 modpack description with enhanced survival features
+- Created modpack information grid with version (21.1.208), system requirements, CurseForge link
+- MINECRAFT INTEGRATIONS: Complete server status and player tracking system
+- Built MinecraftStatus component with real-time online/offline status, player count, MOTD, version info
+- Built PlayerList component with live player tracking, Minecraft skin avatars via Crafatar API
+- Built MapEmbed component ready for Dynmap/BlueMap integration (shows "Coming Soon" placeholder)
+- Built Leaderboard component with player rankings, playtime, achievements (placeholder data)
+- Created API routes: /api/minecraft/status, /api/minecraft/players, /api/minecraft/leaderboard
+- Integrated mcsrvstat.us API for server status with proper caching (30s) and error handling
+- Implemented Mojang API integration for UUID lookup and player skin avatars
+- Added UUID caching system to prevent API rate limiting (24-hour cache TTL)
+- Server address configured for DucksAtTheNightclub.exaroton.me with automatic updates every 30 seconds
+- Responsive grid layout: 2-column for status/players, full-width for map and leaderboard
+- Applied consistent purple theme, shining text animations, and rounded card styling
+- Added proper loading states, error handling, and fallback displays for all components
+- REMOVED MAP INTEGRATION: Removed MapEmbed component and BlueMap integration from Minecraft page
+- Deleted components/MapEmbed.tsx file entirely due to Exaroton port access limitations
+- Simplified Minecraft page to focus on server status, player list, and leaderboard only
+- HEAVENLY DOMAIN INTEGRATION: Added third Discord server integration for Heavenly Domain (ID: 1303423213790822521)
+- Created dedicated API routes for Heavenly Domain announcements (channel: 1303427141341544539) and events
+- Built HeavenlyAnnouncementsMirror and HeavenlyDiscordEvents components following established patterns
+- Added Heavenly Domain section to homepage with 18+ anime/manga/gaming community description
+- Implemented identical grid layout: announcements/events (3 cols) + Discord widget (1 col)
+- All three Discord servers (Ducks, Social's Nightclub, Heavenly Domain) now fully integrated
+
+### Current Session - Vercel Deployment Preparation
+- Created missing .env.example file with all required environment variables for deployment
+- Confirmed project structure is ready for Vercel deployment
+- All Discord integrations (Ducks, Social's Nightclub, Heavenly Domain) properly configured
+- Minecraft server integration ready with DucksAtTheNightclub.exaroton.me
+- Project can be deployed as-is to Vercel with proper environment variable configuration
+
+Files created/modified:
+- package.json (updated with Next.js scripts and dependencies)
+- next.config.js (Next.js configuration)
+- tailwind.config.js (Tailwind with neon theme colors)
+- postcss.config.js (PostCSS configuration)
+- tsconfig.json (TypeScript configuration)
+- .eslintrc.json (ESLint configuration)
+- pages/_app.tsx (Next.js app wrapper)
+- styles/globals.css (Global styles with neon/cyberpunk theme)
+- components/NeonButton.tsx (Reusable neon button component)
+- components/NeonCard.tsx (Reusable neon card component)
+- pages/index.tsx (Main Discord page)
+- components/DiscordWidget.tsx (Discord server widget embed)
+- components/DiscordEvents.tsx (Discord events display)
+- components/AnnouncementsMirror.tsx (Discord announcements display)
+- pages/api/discord/events.ts (API route for Discord events)
+- pages/api/discord/announcements.ts (API route for Discord announcements)
+- .env.example (Environment variables template)
+- components/Layout.tsx (Global layout with header and navigation)
+- pages/minecraft.tsx (Complete Minecraft server integration page)
+- components/MinecraftStatus.tsx (Real-time server status widget)
+- components/PlayerList.tsx (Live player list with avatars)
+- components/MapEmbed.tsx (Dynamic world map component) - REMOVED
+- components/Leaderboard.tsx (Player rankings and statistics)
+- pages/api/minecraft/status.ts (Server status API route)
+- pages/api/minecraft/players.ts (Player list API route)
+- pages/api/minecraft/leaderboard.ts (Leaderboard API route)
+- pages/hall-of-fame.tsx (Empty Hall of Fame page)
+- pages/api/discord/heavenly-announcements.ts (API route for Heavenly Domain announcements)
+- pages/api/discord/heavenly-events.ts (API route for Heavenly Domain events)
+- components/HeavenlyAnnouncementsMirror.tsx (Heavenly Domain announcements display)
+- components/HeavenlyDiscordEvents.tsx (Heavenly Domain events display)
+- .env.example (Environment variables template for deployment)
+
+## Database Schema
+*No database required for this project - using external APIs and JSON files for data.*
+
+## Project Structure
+```
+Root Directory: C:\Users\Zayn\Desktop\Ducks At The Nightclub\
+- instructions.md (project specifications)
+- design_scheme.md (styling guidelines)
+- readmine.md (this file)
+```
+
+## Key Requirements Identified
+- Framework: Next.js with TypeScript and Tailwind CSS
+- No database - using external APIs (Discord, Minecraft status, Medal.tv)
+- Serverless functions for API proxying
+- Neon/cyberpunk design theme
+- Three main pages with specific components for each
+- Environment variables for API tokens and configuration
